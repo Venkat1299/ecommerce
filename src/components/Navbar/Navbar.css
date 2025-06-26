@@ -1,0 +1,5 @@
+.navbarH,.headingtitleicon{
+    display:flex;
+    flex-grow:1 1 auto;
+    align-items:center;
+}

@@ -1,7 +1,7 @@
 import { useCart } from "../../context/cart-context";
 import "./ProductCardHorizontal.css";
 export const ProductCardHorizontal = ({product}) => {
-    const { id, name, image, oldPrice, newPrice, rating, discount, quantity } = product;
+    const { id, name, image, oldPrice, newPrice, discount, quantity } = product;
     const { cartDispatch } = useCart();
     const handleDecrement = (id) => {
         cartDispatch({
@@ -12,6 +12,12 @@ export const ProductCardHorizontal = ({product}) => {
     const handleIncrement = (id) => {
         cartDispatch({
             type: "INCREMENT",
+            payload: id
+        })
+    }
+    const handleRemove = (id) => {
+        cartDispatch({
+            type: "REMOVE_FROM_CART",
             payload: id
         })
     }
@@ -38,7 +44,7 @@ export const ProductCardHorizontal = ({product}) => {
                 </div>
             </div>
             <div className="cta-actions">
-                <button className="button btn-primary">Add To Cart</button>
+                <button className="button btn-danger" onClick={() => handleRemove(id)}>Remove from Cart</button>
                 <button className="button btn-outline">Move to ❤️</button>
             </div>
         </div>

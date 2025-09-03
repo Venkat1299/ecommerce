@@ -1,5 +1,111 @@
-.navbarH,.headingtitleicon{
-    display:flex;
-    flex-grow:1 1 auto;
-    align-items:center;
+.navbarH {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.headingtitleicon {
+    display: flex;
+    flex-grow: 1 1 auto;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.heading-title {
+    margin: 0;
+}
+
+.heading-title .link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    transition: all 0.3s ease;
+}
+
+.heading-title .link:hover {
+    color: #fbbf24;
+    transform: scale(1.05);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.list-non-bullet {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.list-item-inline {
+    margin: 0;
+}
+
+.list-item-inline .link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.list-item-inline .link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.list-item-inline .link:hover::before {
+    left: 100%;
+}
+
+.list-item-inline .link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fbbf24;
+    transform: translateY(-2px);
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .headingtitleicon {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .list-non-bullet {
+        gap: 1rem;
+    }
+    
+    .heading-title .link {
+        font-size: 1.25rem;
+    }
+    
+    .list-item-inline .link {
+        font-size: 0.875rem;
+        padding: 0.375rem 0.75rem;
+    }
 }

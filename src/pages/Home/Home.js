@@ -1,5 +1,5 @@
-import { Navbar } from "../../components/Navbar";
-import { ProductCard } from "../../components/productCard/productCard";
+import { Navbar } from "../../components";
+import { ProductCard } from "../../components";
 import {Fragment,useEffect,useState} from "react";
 import axios from "axios";
 import "./Home.css";
@@ -11,7 +11,7 @@ export const Home=()=>{
     useEffect(()=>{
         (async()=> {
             try{
-                const{data:{books}}=await axios.get("data.json");
+                const{data:{books}}=await axios.get("/data.json");
                 setProducts(books);
                 }catch(error){
                     console.log(error)
